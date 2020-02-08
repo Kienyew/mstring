@@ -1,13 +1,15 @@
-#include <stddef.h> /* size_t */
+#include <stddef.h>     /* size_t */
 
 typedef struct {
     char* base;
     size_t capacity;
     size_t size;
-} string;
+} mstring;
 
-void string_init(string* s, const char* src);
-void string_free(string* s);
-void string_append(string* s, const char* src, size_t len);
-void string_append_char(string* s, char c);
-const char* string_get(string* s);
+void mstring_init(mstring* s, const char* src);
+void mstring_free(mstring* s);
+void mstring_append(mstring* s, const char* src, size_t len);
+void mstring_append_char(mstring* s, char c);
+size_t mstring_get_size(const mstring* s);
+char mstring_char_at(const mstring* s, size_t index);
+const char* mstring_get(mstring* s);
